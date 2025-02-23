@@ -36,7 +36,13 @@ const IssueDocumentForm = ({ showAlert }) => {
 
   const handleFileChange = (e) => {
     if (e.target.files) {
-      setFile(e.target.files[0])
+      const file = e.target.files[0]
+      if (file && file.type !== 'application/pdf') {
+        showAlert('Only PDF files are allowed!', 'error')
+        e.target.value = ''
+        return
+      }
+      setFile(file)
       setFileName(e.target.files[0].name)
     }
   }
@@ -177,6 +183,7 @@ const IssueDocumentForm = ({ showAlert }) => {
           <input
             type='file'
             id='file'
+            accept='application/pdf'
             onChange={handleFileChange}
             className='mt-1 block w-full text-sm text-gray-500
       file:mr-4 file:py-2 file:px-4

@@ -2,14 +2,14 @@ require('@nomicfoundation/hardhat-toolbox')
 
 /** @type import('hardhat/config').HardhatUserConfig */
 require('dotenv').config()
-const { SEPOLIA_RPC_URL, PRIVATE_KEY, ETHERSCAN_API_KEY } = process.env
+const { SEPOLIA_RPC_URL, SEPOLIA_PRIVATE_KEY, ETHERSCAN_API_KEY } = process.env
 module.exports = {
   defaultNetwork: 'hardhat',
   networks: {
     hardhat: {},
     sepolia: {
       url: SEPOLIA_RPC_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [`0x${SEPOLIA_PRIVATE_KEY}`],
       chainId: 11155111
     }
   },
