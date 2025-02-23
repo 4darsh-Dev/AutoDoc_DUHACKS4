@@ -87,6 +87,20 @@ The platform consists of three main components:
    git clone https://github.com/4darsh-Dev/AutoDoc_DUHACKS4.git
    cd AutoDoc_DUHACKS4
     ```
+2. Frontend setup
+    ```bash
+    cd frontend
+    npm i
+    npm run dev
+    ```
+3. Backend setup
+    ```bash
+    cd backend
+    npm i
+    node app.js
+    ```
+4. Env setup
+    ``` ```
 
 
 ## License
