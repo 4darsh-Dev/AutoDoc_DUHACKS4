@@ -118,15 +118,12 @@ function App() {
           &times;
         </button>
         <h2 className='text-lg font-bold'>Test Credentials</h2>
-        <h3 className='text-base font-semibold'>Verifying Authority</h3>
-        <p>Email: singhamandevofficial@gmail.com</p>
-        <p>Password: 12345678</p>
         <h3 className='text-base font-semibold'>Issuing Authority</h3>
         <p>Email: avengerstonystark419@gmail.com</p>
         <p>Password: #BallIsLife1</p>
         <h3 className='text-base font-semibold'>Individual User</h3>
-        <p>Email: adarshmaurya9415@gmail.com</p>
-        <p>Password: adarsh@123</p>
+        <p>Email: amanforwork1@gmail.com</p>
+        <p>Password:#BallIsLife1 </p>
       </div>
       <Routes>
         <Route

@@ -83,6 +83,7 @@ const register = async (req, res) => {
 let refreshTokens = []
 
 const login = async (req, res) => {
+  console.log('req received')
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() })
