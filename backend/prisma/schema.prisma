@@ -1,0 +1,42 @@
+//first time this worked -Remember to put env variables through cmd for migrations
+//second time I added connection_limit=1 to the db_url in .env and it worked
+//use percentage encoding for special characters in db urls
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  userName  String   @default("")
+  firstName String
+  lastName  String
+  role      String   @default("user")
+  phone     String   @default("")
+  gender    String   @default("")
+  image     String   @default("")
+  dob       Json     @default("{}")
+  walletAddr String  @default("")
+  createdAt DateTime @default(now())
+  password  String   @default("")
+}
+model Document {
+  id             Int      @id @default(autoincrement())
+  issuerAddress  String
+  ownerAddress   String
+  createdAt      DateTime @default(now())
+  expiryAt       DateTime
+  type           String
+  }
+  model Otp {
+  id          Int      @id @default(autoincrement())
+  verifyWith  String   // Can be an email or a phone number
+  otp         String
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime
+}
